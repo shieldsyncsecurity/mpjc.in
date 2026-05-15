@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tax Tools & Calculators | CA Mohit Jain & Associates</title>
+<meta name="description" content="Free online calculators - Income Tax (Old vs New regime), HRA Exemption, EMI, GST, PPF and more. Trusted tax calculators by CA Mohit Jain & Associates." />
+<link rel="stylesheet" href="css/style.css?v=3" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="container top-bar-inner">
+    <div class="top-info">
+      <span><i class="fas fa-envelope"></i> info@camohitjain.com</span>
+      <span><i class="fas fa-phone"></i> <a href="tel:+919990512872" style="color:inherit">+91 99905 12872</a></span>
+    </div>
+    <div class="top-social">
+      <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    </div>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-mark">CA</span>
+      <span class="logo-text">Mohit Jain<small>& Associates</small></span>
+    </a>
+    <nav class="main-nav" id="mainNav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="tools.html" class="active">Tools</a></li>
+        <li><a href="knowledge.html">Knowledge</a></li>
+        <li><a href="updates.html">Updates</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
+  </div>
+</header>
+
+<section class="page-banner">
+  <div class="container">
+    <h1>Tax Tools &amp; Calculators</h1>
+    <p><a href="index.html">Home</a> <i class="fas fa-angle-right"></i> Tools</p>
+  </div>
+</section>
+
+<section class="tools-section">
+  <div class="container">
+    <div class="section-head">
+      <p class="section-eyebrow">Free Online Calculators</p>
+      <h2>Plan smarter. Decide faster.</h2>
+      <p class="section-sub">Quick estimates for tax, EMI, HRA, GST and more. For exact figures applicable to your case, please <a href="contact.html">consult our team</a>.</p>
+    </div>
+
+    <div class="tools-tabs">
+      <button class="tool-tab active" data-tool="incometax"><i class="fas fa-file-invoice-dollar"></i> Income Tax</button>
+      <button class="tool-tab" data-tool="hra"><i class="fas fa-home"></i> HRA Exemption</button>
+      <button class="tool-tab" data-tool="emi"><i class="fas fa-calculator"></i> EMI</button>
+      <button class="tool-tab" data-tool="gst"><i class="fas fa-receipt"></i> GST</button>
+      <button class="tool-tab" data-tool="ppf"><i class="fas fa-piggy-bank"></i> PPF</button>
+      <button class="tool-tab" data-tool="fd"><i class="fas fa-landmark"></i> FD / NSC</button>
+    </div>
+
+    <!-- Income Tax Calculator -->
+    <div class="tool-panel active" id="tool-incometax">
+      <div class="tool-grid">
+        <div class="tool-form">
+          <h3>Income Tax Calculator <span class="tool-meta">FY 2025-26 (AY 2026-27)</span></h3>
+          <p class="tool-help">Compare your liability under Old vs New Regime. Figures are indicative.</p>
+          <div class="form-group">
+            <label for="it-age">Age Group</label>
+            <select id="it-age">
+              <option value="below60">Below 60 years</option>
+              <option value="60to80">Senior (60 - 80 years)</option>
+              <option value="above80">Super Senior (above 80 years)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="it-income">Gross Annual Income (₹)</label>
+            <input type="number" id="it-income" placeholder="e.g. 1200000" min="0" />
+          </div>
+          <div class="form-group">
+            <label for="it-deductions">Total Deductions under Old Regime (₹)</label>
+            <input type="number" id="it-deductions" placeholder="80C, 80D, HRA, etc." min="0" value="0" />
+            <small class="form-hint">Includes Sec 80C (max 1.5L), 80D, HRA, home loan interest, NPS etc. New regime ignores most of these.</small>
+          </div>
+          <button class="btn btn-primary" id="it-calc">Calculate Tax</button>
+        </div>
+        <div class="tool-result" id="it-result">
+          <div class="result-placeholder">
+            <i class="fas fa-chart-bar"></i>
+            <p>Enter your income and deductions to see a side-by-side comparison.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HRA Calculator -->
+    <div class="tool-panel" id="tool-hra">
+      <div class="tool-grid">
+        <div class="tool-form">
+          <h3>HRA Exemption Calculator</h3>
+          <p class="tool-help">House Rent Allowance exemption under Section 10(13A).</p>
+          <div class="form-group">
+            <label for="hra-basic">Basic Salary + DA per year (₹)</label>
+            <input type="number" id="hra-basic" placeholder="e.g. 600000" min="0" />
+          </div>
+          <div class="form-group">
+            <label for="hra-received">HRA Received per year (₹)</label>
+            <input type="number" id="hra-received" placeholder="e.g. 240000" min="0" />
+          </div>
+          <div class="form-group">
+            <label for="hra-rent">Rent Paid per year (₹)</label>
+            <input type="number" id="hra-rent" placeholder="e.g. 300000" min="0" />
+          </div>
+          <div class="form-group">
+            <label for="hra-metro">Do you live in a Metro city?</label>
+            <select id="hra-metro">
+              <option value="yes">Yes (Mumbai, Delhi, Kolkata, Chennai)</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+          <button class="btn btn-primary" id="hra-calc">Calculate HRA</button>
+        </div>
+        <div class="tool-result" id="hra-result">
+          <div class="result-placeholder">
+            <i class="fas fa-home"></i>
+            <p>Fill the form to see your HRA exemption and taxable HRA amount.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- EMI Calculator -->
+    <div class="tool-panel" id="tool-emi">
+      <div class="tool-grid">
+        <div class="tool-form">
+          <h3>Loan EMI Calculator</h3>
+          <p class="tool-help">Equated Monthly Installment with total interest payable.</p>
+          <div class="form-group">
+            <label for="emi-principal">Loan Amount (₹)</label>
+            <input type="number" id="emi-principal" placeholder="e.g. 2500000" min="0" />
+          </div>
+          <div class="form-group">
+            <label for="emi-rate">Annual Interest Rate (%)</label>
+            <input type="number" id="emi-rate" placeholder="e.g. 8.5" step="0.01" min="0" />
+          </div>
+          <div class="form-group">
+            <label for="emi-tenure">Tenure (Years)</label>
+            <input type="number" id="emi-tenure" placeholder="e.g. 20" min="0" max="40" />
+          </div>
+          <button class="btn btn-primary" id="emi-calc">Calculate EMI</button>
+        </div>
+        <div class="tool-result" id="emi-result">
+          <div class="result-placeholder">
+            <i class="fas fa-calculator"></i>
+            <p>Enter loan details to see your monthly EMI and total interest.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GST Calculator -->
+    <div class="tool-panel" id="tool-gst">
+      <div class="tool-grid">
+        <div class="tool-form">
+          <h3>GST Calculator</h3>
+          <p class="tool-help">Add or remove GST from a base / inclusive amount.</p>
+          <div class="form-group">
+            <label for="gst-amount">Amount (₹)</label>
+            <input type="number" id="gst-amount" placeholder="e.g. 10000" min="0" />
+          </div>
+          <div class="form-group">
+            <label for="gst-rate">GST Rate (%)</label>
+            <select id="gst-rate">
+              <option value="0">0%</option>
+              <option value="5">5%</option>
+              <option value="12">12%</option>
+              <option value="18" selected>18%</option>
+              <option value="28">28%</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="gst-mode">Calculation Mode</label>
+            <select id="gst-mode">
+              <option value="add">Add GST to amount (exclusive)</option>
+              <option value="remove">Remove GST (amount is inclusive)</option>
+            </select>
+          </div>
+          <button class="btn btn-primary" id="gst-calc">Calculate GST</button>
+        </div>
+        <div class="tool-result" id="gst-result">
+          <div class="result-placeholder">
+            <i class="fas fa-receipt"></i>
+            <p>Compute GST split into CGST &amp; SGST or IGST.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PPF Calculator -->
+    <div class="tool-panel" id="tool-ppf">
+      <div class="tool-grid">
+        <div class="tool-form">
+          <h3>PPF Maturity Calculator</h3>
+          <p class="tool-help">Public Provident Fund — current rate is editable.</p>
+          <div class="form-group">
+            <label for="ppf-yearly">Yearly Investment (₹)</label>
+            <input type="number" id="ppf-yearly" placeholder="e.g. 150000" min="500" max="150000" />
+            <small class="form-hint">Min ₹500, Max ₹1,50,000 per year</small>
+          </div>
+          <div class="form-group">
+            <label for="ppf-rate">Annual Interest Rate (%)</label>
+            <input type="number" id="ppf-rate" value="7.1" step="0.1" min="0" />
+          </div>
+          <div class="form-group">
+            <label for="ppf-years">Tenure (Years)</label>
+            <input type="number" id="ppf-years" value="15" min="15" max="50" />
+          </div>
+          <button class="btn btn-primary" id="ppf-calc">Calculate Maturity</button>
+        </div>
+        <div class="tool-result" id="ppf-result">
+          <div class="result-placeholder">
+            <i class="fas fa-piggy-bank"></i>
+            <p>See total invested, interest earned, and final maturity amount.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FD / NSC Calculator -->
+    <div class="tool-panel" id="tool-fd">
+      <div class="tool-grid">
+        <div class="tool-form">
+          <h3>FD / NSC Calculator</h3>
+          <p class="tool-help">Compound interest calculator for fixed deposits and NSC.</p>
+          <div class="form-group">
+            <label for="fd-principal">Principal Amount (₹)</label>
+            <input type="number" id="fd-principal" placeholder="e.g. 100000" min="0" />
+          </div>
+          <div class="form-group">
+            <label for="fd-rate">Annual Interest Rate (%)</label>
+            <input type="number" id="fd-rate" placeholder="e.g. 7.5" step="0.01" min="0" />
+          </div>
+          <div class="form-group">
+            <label for="fd-years">Tenure (Years)</label>
+            <input type="number" id="fd-years" placeholder="e.g. 5" min="0" />
+          </div>
+          <div class="form-group">
+            <label for="fd-comp">Compounding Frequency</label>
+            <select id="fd-comp">
+              <option value="1">Annually</option>
+              <option value="2">Half-Yearly</option>
+              <option value="4" selected>Quarterly</option>
+              <option value="12">Monthly</option>
+            </select>
+          </div>
+          <button class="btn btn-primary" id="fd-calc">Calculate Maturity</button>
+        </div>
+        <div class="tool-result" id="fd-result">
+          <div class="result-placeholder">
+            <i class="fas fa-landmark"></i>
+            <p>See your maturity amount and total interest earned.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="cta-strip">
+  <div class="container cta-inner">
+    <div>
+      <h2>Need a custom tax projection?</h2>
+      <p>Get an exact estimate from our team based on your actual financials.</p>
+    </div>
+    <a href="contact.html" class="btn btn-light">Get a Quote</a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-col">
+      <a href="index.html" class="logo logo-light">
+        <span class="logo-mark">CA</span>
+        <span class="logo-text">Mohit Jain<small>& Associates</small></span>
+      </a>
+      <p>Chartered Accountants providing trusted financial, taxation, and advisory services to clients across India.</p>
+      <div class="top-social">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="tools.html">Tools</a></li>
+        <li><a href="knowledge.html">Knowledge</a></li>
+        <li><a href="updates.html">Updates</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Calculators</h4>
+      <ul>
+        <li><a href="tools.html#tool-incometax">Income Tax</a></li>
+        <li><a href="tools.html#tool-hra">HRA Exemption</a></li>
+        <li><a href="tools.html#tool-emi">EMI</a></li>
+        <li><a href="tools.html#tool-gst">GST</a></li>
+        <li><a href="tools.html#tool-ppf">PPF</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Get In Touch</h4>
+      <p><i class="fas fa-map-marker-alt"></i> Raj Nagar, Ghaziabad,<br/>Uttar Pradesh - 201002</p>
+      <p><i class="fas fa-phone"></i> <a href="tel:+919990512872" style="color:inherit">+91 99905 12872</a></p>
+      <p><i class="fas fa-envelope"></i> info@camohitjain.com</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <p>&copy; <span id="year"></span> CA Mohit Jain &amp; Associates. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/919990512872?text=Hello%20CA%20Mohit%20Jain,%20I%20would%20like%20to%20know%20more%20about%20your%20services" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+<a href="#" class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></a>
+
+<script src="js/script.js?v=3"></script>
+<script src="js/tools.js?v=3"></script>
+</body>
+</html>
